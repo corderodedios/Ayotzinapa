@@ -1,0 +1,9 @@
+.text{
+    grid-column-start: 2;
+}
+
+.page-text{
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 100px auto;
+}

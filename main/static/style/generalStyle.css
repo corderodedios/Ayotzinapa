@@ -1,0 +1,42 @@
+:root{
+    --background-color-header: black;
+    --background-color-body: black;
+    --header-height: 80px;
+    --text-color: white;
+    --max-content-width: 1000px;
+}
+
+body{
+    margin: 0;
+    font-family: Helvetica, Arial, sans-serif;
+    min-height: calc(100vh - var(--header-height));
+    background-color: var(--background-color-body);
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.max-width{
+    max-width: var(--max-content-width);
+}
+
+.grid-template{
+    display: grid;
+    grid-template-columns: 250px auto;
+    grid-template-rows: 100px auto ;
+    gap: 20px;
+}
+
+.page-title{
+    grid-row-start: 1;
+    grid-column-start: 1;
+    text-align-last: right;
+}
+
+.page-text{
+    grid-row-start: 2;
+    grid-column-start: 2;
+    hyphens: auto; 
+	text-align: justify;
+}

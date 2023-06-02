@@ -1,0 +1,21 @@
+{% extends 'page.html' %}
+
+{% block title %} Ayotzinapa {% endblock %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="../static/style/ayotzinapa.css">
+{% endblock %}
+
+{% block content %}
+<div class="grid-template max-width">
+    <h1 class="page-title">{{ page.get_title_display }}</h1>
+    <div class="page-text">
+        <div class="text">{{ page.text }}</div>
+            {% for time_step in time_steps %}
+            <span>{{ time_step.date_time }}</span>
+            <div>{{ time_step.text }}</div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

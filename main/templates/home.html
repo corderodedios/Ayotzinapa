@@ -1,0 +1,14 @@
+{% extends 'page.html' %}
+
+{% block title %} Gewaltsames Verschwinden {% endblock %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="../static/style/home.css">
+{% endblock %}
+
+{% block content %}
+<div class="grid-template max-width">
+    <h1 class="page-title">{{ page.get_title_display }}</h1>
+    <div class="page-text">{{ page.text }}</div>
+</div>
+{% endblock %}

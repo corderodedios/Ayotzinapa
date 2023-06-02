@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- style -->
+    <link rel="stylesheet" href="../static/style/generalStyle.css">
+    <link rel="stylesheet" href="../static/style/header.css">
+    {% block stylesheets %}
+    {% endblock %} 
+
+    <!-- social Media Tags 
+    <meta property="og:title" content="Cams World"/>
+    <meta property="og:description" content="Triathlon, Cycling and Running Coaching"/>
+    <meta property="og:image" content="https://env-2925731.jcloud.ik-server.com/media/public/cams-world-kursiv.png"/>
+    <meta property="twitter:title" content="Cams World"/>
+    <meta property="twitter:description" content="Triathlon, Cycling and Running Coaching"/>
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:image" content="https://env-2925731.jcloud.ik-server.com/media/public/cams-world-kursiv.png"/>-->
+
+    <!-- Favicon 
+    <link rel="apple-touch-icon" sizes="180x180" href="../../media/public/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../media/public/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../media/public/favicon/favicon-16x16.png">
+    <link rel="manifest" href="../../media/public/favicon/site.webmanifest">-->
+
+    <title>{% block title %} {% endblock %}</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="{% url 'home' %}">01 Gewaltsames Verschwinden</a></li>
+                <li><a href="{% url 'school' %}">02 Lehramtschulen</a></li>
+                <li><a href="{% url 'ayotzinapa' %}">03 Ayotzinapa</a></li>
+                <li><a href="{% url 'documentation' %}">Prozess Dokumentation</a></li>
+                <li><a href="{% url 'source' %}">Quellen</a></li>
+                <li><a href="{% url 'contact' %}">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="doppel-line"></div>
+    <main>
+        {% block content %}
+        {% endblock %}  
+    </main>
+    <footer>
+
+    </footer>
+</body>
+</html>
