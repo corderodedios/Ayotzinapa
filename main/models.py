@@ -26,13 +26,33 @@ class Page(models.Model):
         return self.title
 
 class Time_Step(models.Model):
-    year = models.IntegerField()
+    YEARS = [
+    ('september', '26. September 2014'),
+    ('2014', '2014'),
+    ('2015', '2015'),
+    ('2016', '2016'),
+    ('2017', '2017'),
+    ('2018', '2018'),
+    ('2019', '2019'),
+    ('2020', '2020'),
+    ('2021', '2021'),
+    ('2022', '2022'),
+    ('2023', '2023'),
+]
+    year = models.CharField(choices=YEARS, max_length=10, default='2014')
     date_time = models.CharField(max_length=20)
     text = models.TextField()
 
+    def __str__(self):
+        return self.date_time
 
 class Victim(models.Model):
     name = models.CharField(max_length=50)
+    image = models.ImageField(upload_to = 'uploads/', blank=True, null= True)
+    text = models.TextField(default="")
+
+    def img_preview(self): 
+        return mark_safe(f'<img src = "{self.image.url}" width = "200"/>') 
 
     def __str__(self):
         return self.name    
@@ -40,6 +60,7 @@ class Victim(models.Model):
 class Source_Category(models.Model):
     name = models.CharField(max_length=50)
     weight = models.IntegerField()
+
 
     def __str__(self):
         return self.name
