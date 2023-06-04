@@ -23,7 +23,11 @@ class Page(models.Model):
         return mark_safe(f'<img src = "{self.image.url}" width = "200"/>') 
     
     def __str__(self):
-        return self.title
+        return self.get_title_display()
+
+    class Meta:
+        verbose_name = 'Seite'
+        verbose_name_plural = 'Seiten'
 
 class Time_Step(models.Model):
     YEARS = [
@@ -46,6 +50,10 @@ class Time_Step(models.Model):
     def __str__(self):
         return self.date_time
 
+    class Meta:
+        verbose_name = 'Zeitpunkt'
+        verbose_name_plural = 'Zeitpunkte'
+
 class Victim(models.Model):
     name = models.CharField(max_length=50)
     image = models.ImageField(upload_to = 'uploads/', blank=True, null= True)
@@ -56,14 +64,21 @@ class Victim(models.Model):
 
     def __str__(self):
         return self.name    
+    
+    class Meta:
+        verbose_name = 'Opfer'
+        verbose_name_plural = 'Opfer'
 
 class Source_Category(models.Model):
     name = models.CharField(max_length=50)
     weight = models.IntegerField()
 
-
     def __str__(self):
         return self.name
+    
+    class Meta:
+        verbose_name = 'Quellenkategorie'
+        verbose_name_plural = 'Quellenkategorien'
 
 class Source(models.Model):
     category = models.ForeignKey(Source_Category, on_delete=models.CASCADE, default="")
@@ -73,8 +88,26 @@ class Source(models.Model):
     def __str__(self):
         return self.title    
 
-class Process_Documentation(models.Model):
+    class Meta:
+        verbose_name = 'Quelle'
+        verbose_name_plural = 'Quellen'
+
+class Process_Documentation_Section(models.Model):
+    title = models.CharField(max_length=150) 
+    text = models.TextField()
+
+    class Meta:
+        verbose_name = 'Dokumentations Abschnitt'
+        verbose_name_plural = 'Dokumentations Abschnitte'    
+   
+class Process_Documentation_Image(models.Model):
     image = models.ImageField(upload_to = 'uploads/')
+    image_alt = models.CharField(max_length=50, blank=True)
+    process_documentation_section = models.ForeignKey(Process_Documentation_Section, on_delete=models.CASCADE, null=True, blank=True) 
 
     def img_preview(self): 
-        return mark_safe(f'<img src = "{self.image.url}" width = "200"/>')     
+        return mark_safe(f'<img src = "{self.image.url}" width = "200"/>')       
+    
+    class Meta:
+        verbose_name = 'Prozess Abschnitt Bild'
+        verbose_name_plural = 'Prozess Abschnitt Bilder'

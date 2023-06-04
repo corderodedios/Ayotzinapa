@@ -35,6 +35,7 @@ ALLOWED_HOSTS = ['127.0.0.1']
 # Application definition
 
 INSTALLED_APPS = [
+    'jazzmin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -139,3 +140,28 @@ EMAIL_PORT = 587 # oder 587 oder was immer der Port deines E-Mail-Providers ist
 EMAIL_USE_TLS = True  # Verbindung benutzt TLS-Verschlüsselung
 EMAIL_HOST_USER = config['EMAIL_HOST_USER']
 EMAIL_HOST_PASSWORD = config['EMAIL_HOST_PASSWORD']
+
+
+# Jazzin backend settings
+JAZZMIN_SETTINGS ={
+"site_title": "Ayotzinapa Admin",
+"welcome_sign": "Welcome to Ayotzinapa Admin",
+"site_brand": "Ayotzinapa",
+"icons":{
+    "auth": "fas fa-users-cog",
+    "auth.Group": "fas fa-users",
+    "auth.user": "fas fa-user",
+    "main.Image": "fas fa-image",
+    "main.Victim": "fas fa-users",
+    "main.Page": "fas fa-file",
+    "main.Process_Documentation_Image": "fas fa-image",
+    "main.Process_Documentation_Section": "fas fa-list",
+    "main.Time_Step": "fas fa-calendar-alt",
+    "main.Source_Category": "fas fa-th-large",
+    "main.Source": "fas fa-tags",
+},
+}
+
+JAZZMIN_UI_TWEAKS = {
+    "theme": "cerulean",
+}
