@@ -58,6 +58,9 @@ class Victim(models.Model):
     name = models.CharField(max_length=50)
     image = models.ImageField(upload_to = 'uploads/', blank=True, null= True)
     text = models.TextField(default="")
+    birth_year = models.IntegerField(default=2000)
+    birth_city = models.CharField(max_length=150, default="")
+    audio = models.FileField(upload_to='audio', null=True, blank=True)
 
     def img_preview(self): 
         return mark_safe(f'<img src = "{self.image.url}" width = "200"/>') 
@@ -104,6 +107,7 @@ class Process_Documentation_Image(models.Model):
     image = models.ImageField(upload_to = 'uploads/')
     image_alt = models.CharField(max_length=50, blank=True)
     process_documentation_section = models.ForeignKey(Process_Documentation_Section, on_delete=models.CASCADE, null=True, blank=True) 
+    big = models.BooleanField(default=False)
 
     def img_preview(self): 
         return mark_safe(f'<img src = "{self.image.url}" width = "200"/>')       
