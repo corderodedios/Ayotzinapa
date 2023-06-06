@@ -55,6 +55,7 @@ class Time_Step(models.Model):
         verbose_name_plural = 'Zeitpunkte'
 
 class Victim(models.Model):
+    prename = models.CharField(max_length=50, default="")
     name = models.CharField(max_length=50)
     image = models.ImageField(upload_to = 'uploads/', blank=True, null= True)
     text = models.TextField(default="")
