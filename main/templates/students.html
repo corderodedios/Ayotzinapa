@@ -1,0 +1,23 @@
+{% extends 'page.html' %}
+{% load markdown_extras %}
+
+{% block title %} Studenten {% endblock %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="../static/style/students.css">
+{% endblock %}
+
+{% block content %}
+<div class="max-width students">
+    <div class="students-colums">
+        {% for student in first_column_students %}
+            <a class="students-link" href="{% url 'student' student.id %}">{{ student.prename }} {{ student.name }}</a>
+        {% endfor %}
+    </div>
+    <div class="students-colums">
+        {% for student in second_column_students %}
+            <a class="students-link" href="{% url 'student' student.id %}">{{ student.prename }} {{ student.name }}</a>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

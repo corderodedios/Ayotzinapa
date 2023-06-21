@@ -1,5 +1,5 @@
-from django.shortcuts import render
-from .models import Page, Time_Step
+from django.shortcuts import render, get_object_or_404
+from .models import Page, Time_Step, Victim
 
 # Create your views here.
 
@@ -45,3 +45,12 @@ def source (request):
 def contact (request):
     page = Page.objects.get(title='contact')
     return render (request, 'contact.html', {'page': page})
+
+def students (request):
+    first_column_students = Victim.objects.all()[:23]
+    second_column_students = Victim.objects.all()[24:43]
+    return render (request, 'students.html', {'first_column_students': first_column_students, 'second_column_students': second_column_students})
+
+def student (request, id):
+    student= get_object_or_404(Victim, pk=id)
+    return render (request, 'student.html', {'student': student})

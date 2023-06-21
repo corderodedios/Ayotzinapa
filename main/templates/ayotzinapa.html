@@ -9,11 +9,10 @@
 {% endblock %}
 
 {% block content %}
-<div class="grid-template max-width">
+<div class="grid-template max-width mb-100">
     <h1 class="year">{{ page.get_title_display }}</h1>
     <div class="page-text">
         <div class="text">{{ page.text | convert_markdown | safe }}</div>
-        </div>
     </div>
 </div>
 

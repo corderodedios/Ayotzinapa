@@ -19,6 +19,12 @@ body{
     font-size: var(--font-size);
 }
 
+main{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
 .max-width{
     max-width: var(--max-content-width);
 }
@@ -44,4 +50,8 @@ body{
 footer {
     height: 400px;
     background-color: var(--background-color-body);
+}
+
+.mb-100{
+    margin-bottom: 100px;
 }

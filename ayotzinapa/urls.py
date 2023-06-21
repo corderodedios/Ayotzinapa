@@ -16,7 +16,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from main.views import home, school, ayotzinapa, source,  contact
+from django.conf import settings
+from django.conf.urls.static import static
+from main.views import home, school, ayotzinapa, source, contact, students, student
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -25,4 +27,11 @@ urlpatterns = [
     path('ayotzinapa/', ayotzinapa, name='ayotzinapa'),
     path('source/', source, name='source'),
     path('contact/', contact, name='contact'),
+    path('students/', students, name='students'),
+    path('student/<int:id>', student, name='student'),
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+

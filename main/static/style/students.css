@@ -1,0 +1,26 @@
+.students{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    font-size: 24px;
+}
+
+.students-colums{
+    display: flex;
+    flex-direction: column;
+}
+
+.students-link{
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.student-img{
+    width: 40%;
+}
+
+.student-view{
+    display: flex;
+    gap: 40px;
+}
