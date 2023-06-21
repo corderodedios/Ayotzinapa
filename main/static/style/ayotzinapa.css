@@ -2,8 +2,25 @@
     grid-column-start: 2;
 }
 
-.page-text{
+.date{
+    text-align-last: right;
+}
+
+.year{
+    grid-row-start: 1;
+    grid-column-start: 1;
+    text-align-last: left;
+}
+
+.grid-template-smal{
     display: grid;
-    gap: 10px;
     grid-template-columns: 100px auto;
+}
+
+.pt-font-size{
+    padding-top: var(--font-size);
+}
+
+.mb-20{
+    margin-bottom: 20px;
 }

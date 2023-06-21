@@ -4,6 +4,7 @@
     --header-height: 80px;
     --text-color: white;
     --max-content-width: 1000px;
+    --font-size: 16px;
 }
 
 body{
@@ -15,6 +16,7 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-size: var(--font-size);
 }
 
 .max-width{
@@ -24,8 +26,6 @@ body{
 .grid-template{
     display: grid;
     grid-template-columns: 250px auto;
-    grid-template-rows: 100px auto ;
-    gap: 20px;
 }
 
 .page-title{
@@ -45,5 +45,3 @@ footer {
     height: 400px;
     background-color: var(--background-color-body);
 }
-
-@media (max-width: 700px)
