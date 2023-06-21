@@ -154,10 +154,8 @@ JAZZMIN_SETTINGS ={
     "main.Image": "fas fa-image",
     "main.Victim": "fas fa-users",
     "main.Page": "fas fa-file",
-    "main.Process_Documentation_Image": "fas fa-image",
-    "main.Process_Documentation_Section": "fas fa-list",
     "main.Time_Step": "fas fa-calendar-alt",
-    "main.Source_Category": "fas fa-th-large",
+    "main.moreInformation": "fas fa-th-large",
     "main.Source": "fas fa-tags",
 },
 }

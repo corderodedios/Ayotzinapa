@@ -8,7 +8,7 @@ class Page(models.Model):
     ('home', 'Gewaltsames Verschwinden'),
     ('school', 'Lehramtschulen'),
     ('ayotzinapa', 'Ayotzinapa'),
-    ('documentation', 'Prozess Dokumentation'),
+    ('students', 'Studenten'),
     ('source', 'Quellen'),
     ('contact', 'Kontakt'),
     ('impressum', 'Impressum'),
@@ -60,8 +60,6 @@ class Victim(models.Model):
     image = models.ImageField(upload_to = 'uploads/', blank=True, null= True)
     text = models.TextField(default="")
     birth_year = models.IntegerField(default=2000)
-    birth_city = models.CharField(max_length=150, default="")
-    audio = models.FileField(upload_to='audio', null=True, blank=True)
 
     def img_preview(self): 
         return mark_safe(f'<img src = "{self.image.url}" width = "200"/>') 
@@ -73,19 +71,7 @@ class Victim(models.Model):
         verbose_name = 'Opfer'
         verbose_name_plural = 'Opfer'
 
-class Source_Category(models.Model):
-    name = models.CharField(max_length=50)
-    weight = models.IntegerField()
-
-    def __str__(self):
-        return self.name
-    
-    class Meta:
-        verbose_name = 'Quellenkategorie'
-        verbose_name_plural = 'Quellenkategorien'
-
 class Source(models.Model):
-    category = models.ForeignKey(Source_Category, on_delete=models.CASCADE, default="")
     title = models.CharField(max_length=150)    
     text = models.TextField()
 
@@ -94,25 +80,11 @@ class Source(models.Model):
 
     class Meta:
         verbose_name = 'Quelle'
-        verbose_name_plural = 'Quellen'
+        verbose_name_plural = 'Quellen' 
 
-class Process_Documentation_Section(models.Model):
-    title = models.CharField(max_length=150) 
-    text = models.TextField()
+class moreInformation(models.Model):
+    title = models.CharField(max_length=100)  
+    link = models.URLField()  
 
-    class Meta:
-        verbose_name = 'Dokumentations Abschnitt'
-        verbose_name_plural = 'Dokumentations Abschnitte'    
-   
-class Process_Documentation_Image(models.Model):
-    image = models.ImageField(upload_to = 'uploads/')
-    image_alt = models.CharField(max_length=50, blank=True)
-    process_documentation_section = models.ForeignKey(Process_Documentation_Section, on_delete=models.CASCADE, null=True, blank=True) 
-    big = models.BooleanField(default=False)
-
-    def img_preview(self): 
-        return mark_safe(f'<img src = "{self.image.url}" width = "200"/>')       
-    
-    class Meta:
-        verbose_name = 'Prozess Abschnitt Bild'
-        verbose_name_plural = 'Prozess Abschnitt Bilder'
+    def __str__(self):
+        return self.title   

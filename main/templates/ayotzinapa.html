@@ -1,5 +1,7 @@
 {% extends 'page.html' %}
 
+{% load markdown_extras %}
+
 {% block title %} Ayotzinapa {% endblock %}
 
 {% block stylesheets %}
@@ -9,13 +11,120 @@
 {% block content %}
 <div class="grid-template max-width">
     <h1 class="page-title">{{ page.get_title_display }}</h1>
-    <div class="page-text">
-        <div class="text">{{ page.text }}</div>
-            {% for time_step in time_steps %}
-            <span>{{ time_step.date_time }}</span>
-            <div>{{ time_step.text }}</div>
-            {% endfor %}
+    <div>
+        <div class="text">{{ page.text | convert_markdown | safe }}</div>
         </div>
     </div>
 </div>
+{% if time_steps_september %}
+<div class="grid-template max-width">
+    <h1>26. September 2014</h1>
+    <div class="page-text">
+        {% for time_step_september in time_steps_september %}
+            <span>{{ time_step_september.date_time }}</span>
+            <div>{{ time_step_september.text }}</div>
+        {% endfor %}
+    </div>
+</div>
+{% endif %}
+
+{% if time_steps_2014 %}
+<div class="grid-template max-width">
+    <h1>2014</h1>
+    <div class="page-text">
+        {% for time_step_2014 in time_steps_2014 %}
+            <span>{{ time_step_2014.date_time }}</span>
+            <div>{{ time_step_2014.text }}</div>
+        {% endfor %}
+    </div>
+</div>
+{% endif %}
+
+{% if time_steps_2015 %}
+<div class="grid-template max-width">
+    <h1>2015</h1>
+    <div class="page-text">
+        {% for time_step_2015 in time_steps_2015 %}
+            <span>{{ time_step_2015.date_time }}</span>
+            <div>{{ time_step_2015.text }}</div>
+        {% endfor %}
+    </div>
+</div>
+{% endif %}
+
+{% if time_steps_2016 %}
+<div class="grid-template max-width">
+    <h1>2016</h1>
+    <div class="page-text">
+        {% for time_step_2016 in time_steps_2016 %}
+            <span>{{ time_step_2016.date_time }}</span>
+            <div>{{ time_step_2016.text }}</div>
+        {% endfor %}
+    </div>
+</div>
+{% endif %}
+
+{% if time_steps_2017 %}
+<div class="grid-template max-width">
+    <h1>2017</h1>
+    <div class="page-text">
+        {% for time_step_2017 in time_steps_2017 %}
+            <span>{{ time_step_2017.date_time }}</span>
+            <div>{{ time_step_2017.text }}</div>
+        {% endfor %}
+    </div>
+</div>
+{% endif %}
+
+{% if time_steps_2018 %}
+<div class="grid-template max-width">
+    <h1>2018</h1>
+    <div class="page-text">
+        {% for time_step_2018 in time_steps_2018 %}
+            <span>{{ time_step_2018.date_time }}</span>
+            <div>{{ time_step_2018.text }}</div>
+        {% endfor %}
+    </div>
+</div>
+{% endif %}
+
+{% if time_steps_2019 %}
+<div class="grid-template max-width">
+    <h1>2019</h1>
+    <div class="page-text">
+        {% for time_step_2019 in time_steps_2019 %}
+            {% if time_step_2019 == 'empty' %}
+            <span></span>
+            {% endif %}
+            <span>{{ time_step_2019.date_time }}</span>
+            <div>{{ time_step_2019.text }}</div>
+        {% endfor %}
+    </div>
+</div>
+{% endif %}
+
+{% if time_steps_2020 %}
+<div class="grid-template max-width">
+    <h1>2020</h1>
+    <div class="page-text">
+        {% for time_step_2020 in time_steps_2020 %}
+            <span>{{ time_step_2020.date_time }}</span>
+            <div>{{ time_step_2020.text }}</div>
+        {% endfor %}
+    </div>
+</div>
+{% endif %}
+
+{% if time_steps_2021 %}
+<div class="grid-template max-width">
+    <h1>2021</h1>
+    <div class="page-text">
+        {% for time_step_2021 in time_steps_2021 %}
+            <span>{{ time_step_2021.date_time }}</span>
+            <div>{{ time_step_2021.text }}</div>
+        {% endfor %}
+    </div>
+</div>
+{% endif %}
+
 {% endblock %}

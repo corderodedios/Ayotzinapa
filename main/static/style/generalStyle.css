@@ -40,3 +40,10 @@ body{
     hyphens: auto; 
 	text-align: justify;
 }
+
+footer {
+    height: 400px;
+    background-color: var(--background-color-body);
+}
+
+@media (max-width: 700px)
