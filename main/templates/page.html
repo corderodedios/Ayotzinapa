@@ -28,18 +28,21 @@
     <link rel="icon" type="image/png" sizes="16x16" href="../../media/public/favicon/favicon-16x16.png">
     <link rel="manifest" href="../../media/public/favicon/site.webmanifest">-->
 
+    <!-- scripts -->
+    <script src="../static/scripts/init.js"></script>
+
     <title>{% block title %} {% endblock %}</title>
 </head>
-<body>
+<body onload="init('{% block load %}{% endblock %}')">
     <header>
         <nav>
             <ul>
-                <li><a href="{% url 'home' %}">01 Gewaltsames Verschwinden</a></li>
-                <li><a href="{% url 'school' %}">02 Lehramtschulen</a></li>
-                <li><a href="{% url 'ayotzinapa' %}">03 Ayotzinapa</a></li>
-                <li><a href="{% url 'students' %}">Studenten</a></li>
-                <li><a href="{% url 'source' %}">Quellen</a></li>
-                <li><a href="{% url 'contact' %}">Kontakt</a></li>
+                <li><a id="verschwinden" href="{% url 'home' %}">01 Gewaltsames Verschwinden</a></li>
+                <li><a id="" href="{% url 'school' %}">02 Lehramtschulen</a></li>
+                <li><a id="ayotzinapa" href="{% url 'ayotzinapa' %}">03 Ayotzinapa</a></li>
+                <li><a id="students" href="{% url 'students' %}">Studenten</a></li>
+                <li><a id="quellen" href="{% url 'source' %}">Quellen</a></li>
+                <li><a id="contact" href="{% url 'contact' %}">Kontakt</a></li>
             </ul>
         </nav>
     </header>

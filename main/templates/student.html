@@ -13,12 +13,11 @@
     <img class="student-img" src="{{ student.image.url }}" alt="Porträt des Studenten">
     {% endif %}
     <div class="student-info">
-        <h1>{{ student.prename }}</h1>
-        <h1>{{ student.name }}</h1>
+        <h1>{{ student.prename }} {{ student.name }}</h1>
         <div>
             Geburtsjahr: {% if student.birth_year > 100 %} {{ student.birth_year }} {% else %} nicht verfügbar {% endif %}
         </div>
-        <div class="page-text">{{ page.text | convert_markdown | safe }}</div>
+        <div class="page-text mt-40">{{ student.text | convert_markdown | safe }}</div>
     </div>
 </div>
 {% endblock %}

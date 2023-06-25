@@ -88,3 +88,7 @@ class moreInformation(models.Model):
 
     def __str__(self):
         return self.title   
+    
+    class Meta:
+        verbose_name = 'Mehr Informationen'
+        verbose_name_plural = 'Mehr Informationen'

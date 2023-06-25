@@ -3,7 +3,7 @@
 {% load markdown_extras %}
 
 {% block title %} Ayotzinapa {% endblock %}
-
+{% block load %}ayotzinapa{% endblock %}
 {% block stylesheets %}
 <link rel="stylesheet" href="../static/style/ayotzinapa.css">
 {% endblock %}
@@ -51,6 +51,24 @@
     </div>
 </div>
 {% endif %}
+
+{% if time_steps_2016 %}
+<div class="grid-template max-width">
+    <h1 class="year">2016</h1>
+    <div class="page-text grid-template-smal">
+        {% for time_step in time_steps_2016 %}
+            {% if time_step.date_time == "empty" %}
+            <div class="date mt-100"></span><div class="red-circle date"></div></div>
+            <div class="pt-font-size mb-20 mt-100">{{ time_step.text }}</div>
+            {% else %}
+            <span class="date">{{ time_step.date_time }}</span>
+            <div class="pt-font-size mb-20">{{ time_step.text }}</div>
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>
+{% endif %}
+
 
 
 {% endblock %}

@@ -7,6 +7,7 @@ header{
     height: var(--header-height);
     display: flex;
     align-items: center;
+    z-index: 10;
 }
 
 header nav{
@@ -32,7 +33,7 @@ header nav a{
 }
 
 header nav a:hover{
-    opacity: 0.8;
+    opacity: var(--opacity);
 }
 
 .doppel-line{
@@ -43,4 +44,6 @@ header nav a:hover{
     background-color: var(--background-color-header);
     margin-top: var(--header-height);
     margin-bottom: 60px;
+    position: fixed;
+    z-index: 10;
 }
