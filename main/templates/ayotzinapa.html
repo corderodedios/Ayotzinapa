@@ -69,6 +69,125 @@
 </div>
 {% endif %}
 
+{% if time_steps_2017 %}
+<div class="grid-template max-width">
+    <h1 class="year">2017</h1>
+    <div class="page-text grid-template-smal">
+        {% for time_step in time_steps_2017 %}
+            {% if time_step.date_time == "empty" %}
+            <div class="date mt-100"></span><div class="red-circle date"></div></div>
+            <div class="pt-font-size mb-20 mt-100">{{ time_step.text }}</div>
+            {% else %}
+            <span class="date">{{ time_step.date_time }}</span>
+            <div class="pt-font-size mb-20">{{ time_step.text }}</div>
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>
+{% endif %}
+
+{% if time_steps_2018 %}
+<div class="grid-template max-width">
+    <h1 class="year">2018</h1>
+    <div class="page-text grid-template-smal">
+        {% for time_step in time_steps_2018 %}
+            {% if time_step.date_time == "empty" %}
+            <div class="date mt-100"></span><div class="red-circle date"></div></div>
+            <div class="pt-font-size mb-20 mt-100">{{ time_step.text }}</div>
+            {% else %}
+            <span class="date">{{ time_step.date_time }}</span>
+            <div class="pt-font-size mb-20">{{ time_step.text }}</div>
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>
+{% endif %}
+
+{% if time_steps_2019 %}
+<div class="grid-template max-width">
+    <h1 class="year">2019</h1>
+    <div class="page-text grid-template-smal">
+        {% for time_step in time_steps_2019 %}
+            {% if time_step.date_time == "empty" %}
+            <div class="date mt-100"></span><div class="red-circle date"></div></div>
+            <div class="pt-font-size mb-20 mt-100">{{ time_step.text }}</div>
+            {% else %}
+            <span class="date">{{ time_step.date_time }}</span>
+            <div class="pt-font-size mb-20">{{ time_step.text }}</div>
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>
+{% endif %}
+
+{% if time_steps_2020 %}
+<div class="grid-template max-width">
+    <h1 class="year">2020</h1>
+    <div class="page-text grid-template-smal">
+        {% for time_step in time_steps_2020 %}
+            {% if time_step.date_time == "empty" %}
+            <div class="date mt-100"></span><div class="red-circle date"></div></div>
+            <div class="pt-font-size mb-20 mt-100">{{ time_step.text }}</div>
+            {% else %}
+            <span class="date">{{ time_step.date_time }}</span>
+            <div class="pt-font-size mb-20">{{ time_step.text }}</div>
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>
+{% endif %}
+
+{% if time_steps_2021 %}
+<div class="grid-template max-width">
+    <h1 class="year">2021</h1>
+    <div class="page-text grid-template-smal">
+        {% for time_step in time_steps_2021 %}
+            {% if time_step.date_time == "empty" %}
+            <div class="date mt-100"></span><div class="red-circle date"></div></div>
+            <div class="pt-font-size mb-20 mt-100">{{ time_step.text }}</div>
+            {% else %}
+            <span class="date">{{ time_step.date_time }}</span>
+            <div class="pt-font-size mb-20">{{ time_step.text }}</div>
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>
+{% endif %}
+
+{% if time_steps_2022 %}
+<div class="grid-template max-width">
+    <h1 class="year">2022</h1>
+    <div class="page-text grid-template-smal">
+        {% for time_step in time_steps_2022 %}
+            {% if time_step.date_time == "empty" %}
+            <div class="date"></span><div class="red-circle date"></div></div>
+            <div class="pt-font-size mb-20">{{ time_step.text }}</div>
+            {% else %}
+            <span class="date">{{ time_step.date_time }}</span>
+            <div class="pt-font-size mb-20">{{ time_step.text }}</div>
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>
+{% endif %}
+
+{% if time_steps_2023 %}
+<div class="grid-template max-width">
+    <h1 class="year">2023</h1>
+    <div class="page-text grid-template-smal">
+        {% for time_step in time_steps_2023 %}
+            {% if time_step.date_time == "empty" %}
+            <div class="date mt-100"></span><div class="red-circle date"></div></div>
+            <div class="pt-font-size mb-20 mt-100">{{ time_step.text }}</div>
+            {% else %}
+            <span class="date">{{ time_step.date_time }}</span>
+            <div class="pt-font-size mb-20">{{ time_step.text }}</div>
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>
+{% endif %}
+
 
 
 {% endblock %}
