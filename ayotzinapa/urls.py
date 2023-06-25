@@ -18,7 +18,7 @@ from django.contrib import admin
 from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
-from main.views import home, school, ayotzinapa, source, contact, students, student
+from main.views import home, school, ayotzinapa, source, contact, students, student, legal, impressum
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -29,6 +29,8 @@ urlpatterns = [
     path('contact/', contact, name='contact'),
     path('students/', students, name='students'),
     path('student/<int:id>', student, name='student'),
+    path('impressum/', impressum, name='impressum'),
+    path('legal/', legal, name='legal'),
 ]
 
 if settings.DEBUG:

@@ -5,12 +5,34 @@
 {% block title %} Gewaltsames Verschwinden {% endblock %}
 {% block load %}quellen{% endblock %}
 {% block stylesheets %}
-<link rel="stylesheet" href="../static/style/home.css">
+<link rel="stylesheet" href="../static/style/source.css">
 {% endblock %}
 
 {% block content %}
 <div class="grid-template max-width">
     <h1 class="page-title">{{ page.get_title_display }}</h1>
+    {% if page.text %}
     <div class="page-text">{{ page.text | convert_markdown | safe }}</div>
+    {% endif %}
+    <div class="sources page-text">
+        {% for source in sources %}
+        <div class="source">
+            <strong>{{ source.title }}</strong>
+            <div>{{ source.text }}</div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<div class="grid-template max-width">
+    <h1 class="page-title">Weiterführende Informationen</h1>
+    <div class="page-text">
+        {% for source in moreInfos %}
+        <div class="source">
+            <strong>{{ source.title }}</strong>
+            <div>{{ source.text }}</div>
+        </div>
+        {% endfor %}
+    </div>
 </div>
 {% endblock %}

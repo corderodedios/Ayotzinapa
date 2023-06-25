@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from .models import Page, Time_Step, Victim
+from .models import Page, Time_Step, Victim, Source, moreInformation
 
 # Create your views here.
 
@@ -40,7 +40,9 @@ def ayotzinapa (request):
 
 def source (request):
     page = Page.objects.get(title='source')
-    return render (request, 'source.html', {'page': page})
+    sources = Source.objects.all()
+    moreInfos = moreInformation.objects.all()
+    return render (request, 'source.html', {'page': page, 'sources': sources, 'moreInfos': moreInfos})
 
 def contact (request):
     page = Page.objects.get(title='contact')
@@ -54,3 +56,11 @@ def students (request):
 def student (request, id):
     student= get_object_or_404(Victim, pk=id)
     return render (request, 'student.html', {'student': student})
+
+def impressum (request):
+    page = Page.objects.get(title='impressum')
+    return render (request, 'impressum.html', {'page': page})
+
+def legal (request):
+    page = Page.objects.get(title='legal')
+    return render (request, 'legal.html', {'page': page})

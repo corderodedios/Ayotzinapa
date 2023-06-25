@@ -1,0 +1,11 @@
+.source{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.sources{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}

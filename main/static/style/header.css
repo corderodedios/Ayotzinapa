@@ -47,3 +47,26 @@ header nav a:hover{
     position: fixed;
     z-index: 10;
 }
+
+.ml-6{
+    margin-left: 80%;
+}
+
+footer{
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+footer ul{
+    list-style: none;
+    display: flex;
+    gap: 10px;
+}
+
+footer a{
+    text-decoration: none;
+}

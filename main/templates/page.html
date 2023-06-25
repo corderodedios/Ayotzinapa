@@ -41,7 +41,7 @@
                 <li><a id="" href="{% url 'school' %}">02 Lehramtschulen</a></li>
                 <li><a id="ayotzinapa" href="{% url 'ayotzinapa' %}">03 Ayotzinapa</a></li>
                 <li><a id="students" href="{% url 'students' %}">Studenten</a></li>
-                <li><a id="quellen" href="{% url 'source' %}">Quellen</a></li>
+                <li><a class="ml-6" id="quellen" href="{% url 'source' %}">Quellen</a></li>
                 <li><a id="contact" href="{% url 'contact' %}">Kontakt</a></li>
             </ul>
         </nav>
@@ -52,7 +52,10 @@
         {% endblock %}  
     </main>
     <footer>
-
+        <ul>
+            <li><a href="{% url 'impressum' %}">Impressum</a></li>
+            <li><a href="{% url 'legal' %}">Datenschutzerklärung</a></li>
+        </ul>
     </footer>
 </body>
 </html>
