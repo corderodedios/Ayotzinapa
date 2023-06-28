@@ -9,7 +9,7 @@
 {% endblock %}
 
 {% block content %}
-<div class="grid-template max-width">
+<div class="grid-template max-width fontsize-timetable mb-100">
     <h1 class="page-title">{{ page.get_title_display }}</h1>
     {% if page.text %}
     <div class="page-text">{{ page.text | convert_markdown | safe }}</div>
@@ -18,7 +18,7 @@
         {% for source in sources %}
         <div class="source">
             <strong>{{ source.title }}</strong>
-            <div>{{ source.text }}</div>
+            <div>{{ source.text | convert_markdown | safe }}</div>
         </div>
         {% endfor %}
     </div>
@@ -26,11 +26,11 @@
 
 <div class="grid-template max-width">
     <h1 class="page-title">Weiterführende Informationen</h1>
-    <div class="page-text">
+    <div class="page-text fontsize-timetable gap-source">
         {% for source in moreInfos %}
         <div class="source">
             <strong>{{ source.title }}</strong>
-            <div>{{ source.text }}</div>
+            <a href="{{ source.link }}">{{ source.link }}</a>
         </div>
         {% endfor %}
     </div>

@@ -10,6 +10,7 @@
 {% block content %}
 <div class="grid-template max-width">
     <h1 class="page-title">{{ page.get_title_display }}</h1>
-    <div class="page-text">{{ page.text | convert_markdown | safe }}</div>
+    <div class="page-text no-block">{{ page.text | convert_markdown | safe }}</div>
 </div>
+<div class="page-source"> {{ page.source | convert_markdown | safe }} </div>
 {% endblock %}

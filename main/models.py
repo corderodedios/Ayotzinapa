@@ -18,6 +18,7 @@ class Page(models.Model):
     text = models.TextField(blank=True)
     image = models.ImageField(blank=True, null=True, upload_to= 'uploads/')
     image_alt = models.CharField(max_length=50, blank=True)
+    source = models.TextField(blank=True)
 
     def img_preview(self): 
         return mark_safe(f'<img src = "{self.image.url}" width = "200"/>') 
@@ -57,6 +58,7 @@ class Time_Step(models.Model):
 class Victim(models.Model):
     prename = models.CharField(max_length=50, default="")
     name = models.CharField(max_length=50)
+    identified = models.BooleanField(default=False)
     image = models.ImageField(upload_to = 'uploads/', blank=True, null= True)
     text = models.TextField(default="")
     birth_year = models.IntegerField(default=2000)
