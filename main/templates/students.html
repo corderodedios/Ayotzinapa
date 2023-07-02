@@ -8,10 +8,13 @@
 {% endblock %}
 
 {% block content %}
-<div class="max-width students">
+<div class="students">
     <div class="students-colums">
         {% for student in first_column_students %}
-            <a class="students-link" href="{% url 'student' student.id %}">{{ student.prename }} {{ student.name }}</a>
+            <a class="students-link" href="{% url 'student' student.id %}">{{ student.prename }} {{ student.name }} 
+                {% if student.identified %} 
+                <span class="identified">(identifiziert)</span>{% endif %}
+            </a>
         {% endfor %}
     </div>
     <div class="students-colums">
